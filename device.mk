@@ -141,6 +141,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ConfigPanel \
 
+#VR
+  PRODUCT_PACKAGES += \
+    vr.msm8996
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8996 \
