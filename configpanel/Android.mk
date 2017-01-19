@@ -25,8 +25,7 @@ LOCAL_PACKAGE_NAME := ConfigPanel
 LOCAL_AAPT_FLAGS := --auto-add-overlay
 
 LOCAL_RESOURCE_DIR := \
-    $(LOCAL_PATH)/res \
-    $(LOCAL_PATH)/../../../../packages/resources/devicesettings/res
+    $(LOCAL_PATH)/res
 
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_TAGS := optional
