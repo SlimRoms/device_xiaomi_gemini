@@ -40,6 +40,9 @@ TARGET_SCREEN_WIDTH := 1080
 # HWUI overrides
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
+#Graphics
+-include $(LOCAL_PATH)/graphics/graphics-vendor.mk)
+
 # Permissions
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml \
@@ -121,10 +124,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/system/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml
 
-# Camera
-PRODUCT_PACKAGES += \
-    Snap
-
 # Device config scripts
 PRODUCT_PACKAGES += \
     init.leds.sh \
@@ -146,11 +145,7 @@ PRODUCT_PACKAGES += \
 
 # ConfigPanel
 PRODUCT_PACKAGES += \
-    ConfigPanel \
-
-#VR
-  PRODUCT_PACKAGES += \
-    vr.msm8996
+    ConfigPanel
 
 # Display
 PRODUCT_PACKAGES += \
@@ -165,8 +160,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/calib.cfg:system/etc/calib.cfg
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    XiaomiDoze
+#PRODUCT_PACKAGES += \
+#    XiaomiDoze
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -220,10 +215,6 @@ PRODUCT_PACKAGES += \
 # IRQ Balancer
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
-
-# KeyHandler
-PRODUCT_PACKAGES += \
-    com.cyanogenmod.keyhandler
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -280,6 +271,10 @@ PRODUCT_PACKAGES += \
 # QMI
 PRODUCT_PACKAGES += \
     libjson
+
+# Recovery
+PRODUCT_PACKAGES += \
+    librecovery_updater_gemini
 
 # RIL
 PRODUCT_PACKAGES += \
